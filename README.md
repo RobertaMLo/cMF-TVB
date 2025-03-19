@@ -2,6 +2,7 @@
 Integration of the cerebellar mean field model into "The Virtual Brain" (TVB) neuroinformatic platform as the first example of:
 1) Region-specificity
 2) Multi-model simulation
+Detailed description and output in Lorenzi et al., 2025, BioRxiv, https://doi.org/10.1101/2022.11.24.517708
 
 
 - **multimf_ww**: Simulations using CRBL MF + WW, allowing cerebellar closed-loop or whole-brain simulations.
@@ -19,8 +20,9 @@ Integration of the cerebellar mean field model into "The Virtual Brain" (TVB) ne
   ```
 
 ## References
-- The **CRBL mean-field model** equations are from *Lorenzi et al., 2023*.
-- The **construction pipeline** is inspired by *Goldman et al., 2023*.
+- **Full pipeline** and results in *Lorenzi et al., 2025, BioRxiv https://doi.org/10.1101/2022.11.24.517708*
+- **CRBL mean-field model** equations are from *Lorenzi et al., 2023, PlosCompBio https://doi.org/10.1371/journal.pcbi.1011434*.
+- **construction pipeline** is inspired by *Goldman et al., 2023, FrontCompNeurosci https://doi.org/10.3389/fncom.2022.1058957*.
 
 ## Running Simulations
 Ensure that all files are placed in the appropriate directories within your TVB installation. Then, configure and execute simulations according to your experimental setup.
