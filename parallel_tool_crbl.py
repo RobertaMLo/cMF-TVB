@@ -3,7 +3,7 @@
 """
 @author: rlorenzi
 """
-
+## Based on Goldman et al., pipeline
 
 
 import tvb.simulator.lab as lab
@@ -40,7 +40,7 @@ def init(parameter_simulation,parameter_model,parameter_connection_between_regio
         import tvb_model_reference.src.parallel_crbl as model
 
         if parameter_model['order'] == 1:
-            print('SONO QUI BABY - ordine 1')
+            print('order: 1')
             model = model.crbl_cortical_first_ord(variables_of_interest='d1 d2 d3 d4 noise'.split())
 
         
@@ -126,7 +126,7 @@ def init(parameter_simulation,parameter_model,parameter_connection_between_regio
 
 
     ## Connection
-    ##### SECONDO ME QUI LO LASCIO COSì E SEMMAI TOCCO NEL JUPYTER #############
+    
     if parameter_connection_between_region['default']:
         connection = lab.connectivity.Connectivity().from_file()
     elif parameter_connection_between_region['from_file']:
@@ -275,7 +275,7 @@ def init(parameter_simulation,parameter_model,parameter_connection_between_regio
         monitors.append(monitor_Ca)
 
 
-#%%
+
 
     #save the parameters in on file
     if not os.path.exists(parameter_simulation['path_result']):
