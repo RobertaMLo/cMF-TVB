@@ -29,5 +29,6 @@ Detailed description and output in Lorenzi et al., 2025, BioRxiv, https://doi.or
 
 ## Running Simulations
 Ensure that all files are placed in the appropriate directories within your TVB installation. Then, configure and execute simulations according to your experimental setup.
+Example input data: data103818 - Strucutral connectivity matrices computed for subject ID 103818 of Human Connectome Project
 
 For additional details, please contact robertamaria.lorenzi01@universitadipavia.it.
