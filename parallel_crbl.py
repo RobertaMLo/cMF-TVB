@@ -38,79 +38,78 @@ class crbl_cortical_first_ord(Model):
     ## =============================================================================================================================
     ## ================================ CRBL MF PARAMETERS =========================================================================
     ## =============================================================================================================================
-    # GL definisco range di +- 0.05 perchè non capisco
     g_L_grc =  NArray(
         label=":math:`gGrC_{L}`",
-        default=numpy.array([0.29]),  # 10 nS by default, i.e. ~ 100MOhm input resitance at rest
-        domain=Range(lo=0.25, hi=0.35, step=0.1),  # 0.1nS would be a very small cell, 100nS a very big one
+        default=numpy.array([0.29]), 
+        domain=Range(lo=0.25, hi=0.35, step=0.1), 
         doc="""Granule cells leak conductance [nS]""")
 
     g_L_goc =  NArray(
         label=":math:`gGoC_{L}`",
-        default=numpy.array([3.30]),  # 10 nS by default, i.e. ~ 100MOhm input resitance at rest
-        domain=Range(lo=3.25, hi=3-35, step=0.1),  # 0.1nS would be a very small cell, 100nS a very big one
+        default=numpy.array([3.30]), 
+        domain=Range(lo=3.25, hi=3-35, step=0.1),  
         doc="""Golgi cells leak conductance [nS]""")
 
     g_L_mli =  NArray(
         label=":math:`gMLI_{L}`",
-        default=numpy.array([1.60]),  # 10 nS by default, i.e. ~ 100MOhm input resitance at rest
-        domain=Range(lo=1.55, hi=1.65, step=0.1),  # 0.1nS would be a very small cell, 100nS a very big one
+        default=numpy.array([1.60]),
+        domain=Range(lo=1.55, hi=1.65, step=0.1),
         doc="""leak conductance [nS]""")
     
     g_L_pc =  NArray(
         label=":math:`gPC_{L}`",
-        default=numpy.array([7.10]),  # 10 nS by default, i.e. ~ 100MOhm input resitance at rest
-        domain=Range(lo=7.5, hi=7.15, step=0.1),  # 0.1nS would be a very small cell, 100nS a very big one
+        default=numpy.array([7.10]),
+        domain=Range(lo=7.5, hi=7.15, step=0.1),
         doc="""leak conductance [nS]""")
 
     #Standard deviation (Domanin) from Geminiani et al. 2019
     E_L_grc = NArray(
         label=":math:`EGrC_{L}`",
         default=numpy.array([-62.0]),
-        domain=Range(lo=-62.1, hi=-61.9, step=0.1),  # resting potential, usually between -85mV and -65mV
+        domain=Range(lo=-62.1, hi=-61.9, step=0.1), 
         doc="""leak reversal potential for excitatory [mV]""")
 
     E_L_goc = NArray(
         label=":math:`EGoC_{L}`",
         default=numpy.array([-62.0]),
-        domain=Range(lo=-73.0, hi=-51.0, step=0.1),  # resting potential, usually between -85mV and -65mV
+        domain=Range(lo=-73.0, hi=-51.0, step=0.1),
         doc="""leak reversal potential for inhibitory [mV]""")
 
     E_L_mli = NArray(
         label=":math:`EMLI_{L}`",
         default=numpy.array([-68.0]),
-        domain=Range(lo=-68.01, hi=-67.9, step=0.1),  # resting potential, usually between -85mV and -65mV
+        domain=Range(lo=-68.01, hi=-67.9, step=0.1), 
         doc="""leak reversal potential for excitatory [mV]""")
 
     E_L_pc = NArray(
         label=":math:`E_{L}`",
         default=numpy.array([-59.0]),
-        domain=Range(lo=-65.0, hi=-53.0, step=0.1),  # resting potential, usually between -85mV and -65mV
+        domain=Range(lo=-65.0, hi=-53.0, step=0.1),
         doc="""leak reversal potential for inhibitory [mV]""")
 
     # N.B. Not independent of g_L, C_m should scale linearly with g_L
     C_m_grc = NArray(
         label=":math:`CGrC_{m}`",
         default=numpy.array([7.0]),
-        domain=Range(lo=5.0, hi=7.5, step=1.0),  # 20pF very small cell, 400pF very
+        domain=Range(lo=5.0, hi=7.5, step=1.0),
         doc="""membrane capacitance [pF]""")
     
     C_m_goc = NArray(
         label=":math:`CGoC_{m}`",
         default=numpy.array([145.0]),
-        domain=Range(lo=72., hi=218.0, step=10.0),  # 20pF very small cell, 400pF very
+        domain=Range(lo=72., hi=218.0, step=10.0),
         doc="""membrane capacitance [pF]""")
 
     C_m_mli = NArray(
         label=":math:`CMLI_{m}`",
         default=numpy.array([14.6]),
-        domain=Range(lo=14.5, hi=14.7, step=0.1),  # 20pF very small cell, 400pF very
+        domain=Range(lo=14.5, hi=14.7, step=0.1),
         doc="""membrane capacitance [pF]""")
 
     C_m_pc = NArray(
         label=":math:`CPC_{m}`",
         default=numpy.array([334.0]),
-        domain=Range(lo=228.0, hi=440.0, step=10.0),  # 20pF very small cell, 400pF very
+        domain=Range(lo=228.0, hi=440.0, step=10.0),
         doc="""membrane capacitance [pF]""")
 
     E_e = NArray(
@@ -335,14 +334,14 @@ class crbl_cortical_first_ord(Model):
         dtype=float,
         label=":math:`alphaMLI`",
         default=numpy.array([5]), #5 official
-        domain=Range(lo=5, hi=5, step=1),  # inhibitory cell number never overcomes excitatory ones
+        domain=Range(lo=5, hi=5, step=1),
         doc="""Number of excitatory connexions from external population""")
 
     alpha_pc = NArray(
         dtype=float,
         label=":math:`alphaPC`",
         default=numpy.array([5]),
-        domain=Range(lo=5, hi=5, step=1),  # inhibitory cell number never overcomes excitatory ones
+        domain=Range(lo=5, hi=5, step=1),
         doc="""Number of inhibitory connexions from external population""")
 
     T = NArray(
@@ -352,24 +351,24 @@ class crbl_cortical_first_ord(Model):
         doc="""time scale of describing network activity""")
 
     P_grc = NArray(
-        label=":math:`PGrC_e`",  # TODO need to check the size of the array when it's used
+        label=":math:`PGrC_e`",
         default=numpy.array([-0.426,  0.007,  0.023, 0.482, 0.216]),
         doc="""Polynome of excitatory GrC phenomenological threshold (order 5)""")
 
     P_goc = NArray(
         label=":math:`PGoC_i`",
         default=numpy.array([-0.144,  0.003, 0.011, 0.031, 0.011]),
-        doc="""Polynome of inhibitory GoC phenomenological threshold (order 9)""")
+        doc="""Polynome of inhibitory GoC phenomenological threshold (order 5)""")
 
     P_mli = NArray(
-        label=":math:`PMLI_i`",  # TODO need to check the size of the array when it's used
+        label=":math:`PMLI_i`",
         default=numpy.array([-0.128, -0.001, 0.012, -0.093, -0.063]),
-        doc="""Polynome of inhibitory phenomenological threshold (order 9)""")
+        doc="""Polynome of inhibitory phenomenological threshold (order 5)""")
 
     P_pc = NArray(
-        label=":math:`PPC_i`",  # TODO need to check the size of the array when it's used
+        label=":math:`PPC_i`", 
         default=numpy.array([-0.080, 0.009, 0.004, 0.006, 0.014]),
-        doc="""Polynome of inhibitory phenomenological threshold (order 9)""")
+        doc="""Polynome of inhibitory phenomenological threshold (order 5)""")
 
     tau_OU = NArray(
         label=":math:`\ntau noise`",
@@ -434,7 +433,7 @@ class crbl_cortical_first_ord(Model):
     variables_of_interest = List(
         of=str,
         label="Variables watched by Monitors",
-        choices=("d1", "d2","d3","d4","noise"), #"GrC", "GoC","MLI","PC","noise"; # E, I, We, Wi, noise
+        choices=("d1", "d2","d3","d4","noise"), #"GrC","GoC","MLI","PC","noise"; # E, I, We, Wi, noise
         default=("d1",),
         doc="""This represents the default state-variables of this Model to be
                monitored. It can be overridden for each Monitor if desired""")
@@ -494,20 +493,8 @@ class crbl_cortical_first_ord(Model):
         Fe_ext_tod1 = (c_0 * 0.57) * 0.97 + self.weight_noise * noise #background noise from cerebrum
         
 
-        #Fe_ext_tod1 = Fe_ext_tod1 * 1e3 #LO PRENDIAMO COME SCALING MICROMETRO NODO
         #print('************************** Fext to grc *********************************')
         #print(Fe_ext_toGrC)
-
-        # # --------- TO GoC : From DCN or from cerebrum ANDDD from PARALLEL of ADJACENT MODULE
-        # #from adjacent parallel regulated form c_0 = sum(weight*coupling)
-        # # standard config
-        # # Fe_ext_tod2 = c_0 + lc_d2 + self.weight_noise * noise
-
-        # # c_0 *  0.43 * 0.25 = N_parallel * conv_parallel_goc
-        # # 0.43 = weight of parallel respect to TOT connection
-        # # 0.25 = how many parallel arrives to GoC 
-        
-        # # weigth CONSIDERING N CELL!!! OFFICIAL VERSION ----------------------------------------------------
         
         Fe_ext_tod2 = (c_0 * 0.57) * 0.03 + (c_0 * 0.43) * 0.14 + self.weight_noise * noise
         
@@ -518,12 +505,6 @@ class crbl_cortical_first_ord(Model):
         Fe_ext_tod4 = (c_0 * 0.43) * 0.31 + self.weight_noise * noise
        
 
-        # # weigthed WIHOUT considering N CELL
-        """   
-        Fe_ext_tod2 = (c_0 * 0.56)*0.04 + (c_0*0.43)*0.25 + self.weight_noise * noise
-        Fe_ext_tod3 = (c_0*0.43) * 0.34 #+ self.weight_noise * noise
-        Fe_ext_tod4 = (c_0*0.43) * 0.41 #+ self.weight_noise * noise
-        """
         
         #check on F_ext value. Must be positive
         index_bad_input = numpy.where(Fe_ext_tod1*self.K_mossy_grc  < 0)
@@ -584,7 +565,6 @@ class crbl_cortical_first_ord(Model):
 
         return derivative
 
-    ### TF erano solo _exc and _inhi ma sono diverse per il return di P-- quindi ne faccio 4
     def TF_excitatory_grc(self, fe_ext, fi, fe, fi_ext=0, W=0): ### FRANCAMENTE MI SEMBRA UGUALE A TF INHIB, A PARTE IL RETURN
         """
         transfer function for excitatory population: Granule cells
@@ -692,7 +672,7 @@ class crbl_cortical_first_ord(Model):
         fe = (Fe+1.0e-6) + Fe_ext
         fi = (Fi+1.0e-6) + Fi_ext
         
-       # CONTRIBUTO DALL'ESTERNO L'HO GIà INCLUSO SOPRA. ORA OGNI VOLTA CHE VEDO fe E fi STO GIA' CONSIDERANDO IL CONTRIBUTO CHE ARRIVA DA ESTERNO.
+
         # conductance fluctuation and effective membrane time constant
         # # stantard
         # mu_Ge, mu_Gi = Q_e*tau_e*fe*Ke + Q_ext_e*tau_ext_e*Fe_ext*K_ext_e, Q_i*tau_i*fi*Ki + Q_ext_i*tau_ext_i*Fi_ext*K_ext_i
@@ -726,11 +706,11 @@ class crbl_cortical_first_ord(Model):
 
         return mu_V, sigma_V, T_V, muGn
 
-    @staticmethod #SE NON METTO STATIC METHOD, IL PRIMO ARGOMENTO è SELF
-    @jit(nopython=True,cache=True) #IN TEORIA SERVE PER NUMBA
+    @staticmethod
+    @jit(nopython=True,cache=True)
 
     def get_fluct_regime_vars_goc(Fe, Fi, Fe_ext, Fi_ext, XX, Qe_g, Te_g, Ee, Qi, Ti, Ei, Gl, Cm, El, Ke_g, Ki, Ke_ext, Qe_ext, Te_ext, Ki_ext = 0):
-        # AGGIUNGO IN CODA QE MOSSY E TAU E MOSSY CHE SONO I PARAM CHE MI MANCANO
+        
         """
         Compute the mean characteristic of neurons.
         Repository :
