@@ -3,7 +3,7 @@
 """
 @author: rlorenzi
 """
-
+# # TO CHECK AND UPDATE THE COUPLING BETWEEN MODELS!!!!!! E/I COUPLING TO DO VIA CONDUCTANCES
 
 
 import tvb.simulator.lab as lab
