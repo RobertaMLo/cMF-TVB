@@ -7,6 +7,9 @@ Detailed description and output in Lorenzi et al., 2025, BioRxiv, https://doi.or
 
 - **multimf_ww**: Simulations using CRBL MF + WW, allowing cerebellar closed-loop or whole-brain simulations.
 - **crbl**: Simulations using only the cerebellar cortex (open-loop configuration).
+- **run_sim_mmTVB**: pipeline to run the multimf_ww codes - closed loop simulation (whole-brain activity)
+- **run_sim_mmTVB_parallel_cerebellum** : pipeline to run the crbl codes - open loop simulation (cerebellar activity only)
+- **tool** : tools for the simulations pipeline
 
 ## File Organization
 
