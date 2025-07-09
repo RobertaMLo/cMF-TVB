@@ -5,7 +5,7 @@ Integration of the cerebellar mean field model into "The Virtual Brain" (TVB) ne
 2) Multi-model simulation
 
 A detailed description of the framework and its validation can be found in:
-Lorenzi et al., 2025, BioRxiv, https://doi.org/10.1101/2022.11.24.517708
+Lorenzi et al., 2025, NPJSBA, https://www.nature.com/articles/s41540-025-00543-9
 
 ---
 
@@ -61,6 +61,6 @@ Follow the same steps (4 to 8) using the cMF-TVB files:
 - For any additional details, please contact robertamaria.lorenzi01@universitadipavia.it.
   
 ## References
-- **Full pipeline** and results in *Lorenzi et al., 2025, BioRxiv https://doi.org/10.1101/2022.11.24.517708*
+- **Full pipeline** and results in *Lorenzi et al., 2025, NPJSBA https://www.nature.com/articles/s41540-025-00543-9*
 - **CRBL mean-field model** equations are from *Lorenzi et al., 2023, PlosCompBio https://doi.org/10.1371/journal.pcbi.1011434*.
 - **Construction pipeline** is inspired by *Goldman et al., 2023, FrontCompNeurosci https://doi.org/10.3389/fncom.2022.1058957*.
